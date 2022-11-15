@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Random;
 
 import application.Main;
@@ -17,6 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**
@@ -38,6 +41,8 @@ public class MainController implements EventHandler<ActionEvent> {
 	@FXML
 	Label welcome;
 	
+	MediaPlayer mediaplayer, mediaPlayerSFX;
+	
 	@Override
 	public void handle(ActionEvent event) {
 		
@@ -46,9 +51,9 @@ public class MainController implements EventHandler<ActionEvent> {
 		String buttonText = sourceButton.getText();
 		
 		if(buttonText!=null && buttonText.contains("Primes, GCD, LCM") ) {
-			//System.out.println("Trick");
-			// move the user to the trick view
+
 			try {
+				playSound("SahbaPrimes");
 				Parent root = FXMLLoader.load(getClass().getResource("../view/Prime.fxml"));
 				Main.stage.setScene( new Scene(root, 600, 600) );
 				Main.stage.show();
@@ -78,5 +83,19 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
+	
+	/**
+     * Creates a new Media object to play sound effects.
+     * 
+     * @param soundName Name of mp3 sound effect audio (String)
+     */
+    public void playSound(String soundName) {
+        String s = "src/application/audio/" + soundName + ".mp3";
+        Media soundEffect = new Media(Paths.get(s).toUri().toString());
+        mediaPlayerSFX = new MediaPlayer(soundEffect);
+        mediaPlayerSFX.play();
+        // mediaPlayer.setStartTime(Duration.seconds(0));
+        // mediaPlayer.setAutoPlay(true);
+    }
 
 }

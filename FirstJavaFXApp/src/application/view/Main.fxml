@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
@@ -7,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #deacc4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #3A8782;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
    <children>
       <Label fx:id="welcome" alignment="CENTER" layoutX="106.0" prefHeight="82.0" prefWidth="386.0" text="Math Found of CS" textAlignment="CENTER">
          <font>
@@ -17,14 +22,14 @@
             <Glow />
          </effect>
       </Label>
-      <Button fx:id="combinatorics" layoutX="227.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #deacc4;" text="Combinatorics">
+      <Button fx:id="combinatorics" layoutX="227.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Combinatorics">
          <effect>
             <DropShadow />
          </effect>
          <font>
             <Font name="Courier New" size="13.0" />
          </font></Button>
-      <Button fx:id="exitButton" layoutX="227.0" layoutY="341.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #deacc4;" text="Exit the program">
+      <Button fx:id="exitButton" layoutX="227.0" layoutY="341.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Exit the program">
          <effect>
             <DropShadow />
          </effect>
@@ -32,7 +37,7 @@
             <Font name="Courier New" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="prime" layoutX="227.0" layoutY="221.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #deacc4;" text="Primes, GCD, LCM">
+      <Button fx:id="prime" layoutX="227.0" layoutY="221.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Primes, GCD, LCM">
          <effect>
             <DropShadow />
          </effect>
