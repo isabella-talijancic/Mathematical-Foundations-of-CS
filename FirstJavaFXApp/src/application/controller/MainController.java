@@ -61,11 +61,12 @@ public class MainController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		else if(buttonText!=null && buttonText.contains("Combinatorics") ) {
+		else if(buttonText!=null && buttonText.contains("Binomial Theorem") ) {
 			//System.out.println("Treat");
 			// move the user to the treat view
 			try {
-				Parent root = FXMLLoader.load(getClass().getResource("../view/Comb.fxml"));
+				playSound("SahbaBinomial");
+				Parent root = FXMLLoader.load(getClass().getResource("../view/Binomial.fxml"));
 				Main.stage.setScene( new Scene(root, 600, 600) );
 				Main.stage.show();
 			}catch(Exception e) {

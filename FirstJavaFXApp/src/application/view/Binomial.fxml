@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #3A8782;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CombController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #3A8782;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.BinomialController">
    <children>
-      <Label fx:id="welcome" alignment="CENTER" layoutX="107.0" prefHeight="82.0" prefWidth="386.0" text="Combinatorics" textAlignment="CENTER">
+      <Label fx:id="welcome" alignment="CENTER" layoutX="107.0" prefHeight="82.0" prefWidth="386.0" text="Binomial Theorem" textAlignment="CENTER">
          <font>
             <Font name="Courier New" size="40.0" />
          </font>
@@ -23,7 +23,7 @@
             <Glow />
          </effect>
       </Label>
-      <Button fx:id="backButton" layoutX="227.0" layoutY="434.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Return to menu">
+      <Button fx:id="backButton" layoutX="227.0" layoutY="434.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Return to Menu">
          <effect>
             <DropShadow />
          </effect>
@@ -37,7 +37,7 @@
          <font>
             <Font name="Courier New" size="13.0" />
          </font></Button>
-      <Button fx:id="exitButton" layoutX="228.0" layoutY="496.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Exit the program">
+      <Button fx:id="exitButton" layoutX="228.0" layoutY="496.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Exit the Program">
          <effect>
             <DropShadow />
          </effect>
@@ -45,17 +45,8 @@
             <Font name="Courier New" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="aField" layoutX="150.0" layoutY="151.0" prefHeight="25.0" prefWidth="100.0" />
-      <Label alignment="CENTER" layoutX="125.0" layoutY="150.0" prefHeight="28.0" prefWidth="23.0" text="a:" textAlignment="CENTER">
-         <font>
-            <Font name="Courier New" size="20.0" />
-         </font>
-         <effect>
-            <Glow />
-         </effect>
-      </Label>
-      <TextField fx:id="bField" layoutX="150.0" layoutY="186.0" prefHeight="25.0" prefWidth="100.0" />
-      <Label alignment="CENTER" layoutX="125.0" layoutY="185.0" prefHeight="28.0" prefWidth="23.0" text="b:" textAlignment="CENTER">
+      <TextField fx:id="nField" layoutX="150.0" layoutY="151.0" prefHeight="25.0" prefWidth="100.0" />
+      <Label alignment="CENTER" layoutX="125.0" layoutY="150.0" prefHeight="28.0" prefWidth="23.0" text="n:" textAlignment="CENTER">
          <font>
             <Font name="Courier New" size="20.0" />
          </font>

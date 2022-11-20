@@ -1,9 +1,9 @@
 package application.controller;
 
 import java.io.File;
-import java.util.Random;
 
 import application.Main;
+import application.model.Binomial;
 import application.model.Prime;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,83 +29,119 @@ import javafx.stage.Stage;
  * UTSA CS 3333 - Project
  * Fall 2022
  */
-public class CombController implements EventHandler<ActionEvent> {
+public class BinomialController implements EventHandler<ActionEvent> {
 
 	@FXML
 	Button enterButton, backButton, exitButton;
+	
 	@FXML
     ImageView bannerImageView;
+	
 	@FXML
     Image bannerImage;
+	
 	@FXML
 	Label welcome, warningLabel, resultLabel;
+	
 	@FXML
-	TextField aField, bField;
+	TextField nField;
 	
 	@Override
 	public void handle(ActionEvent event) {
 		
 		//check which button was pressed...
 		Button sourceButton = (Button) event.getSource();
+		
 		String buttonText = sourceButton.getText();
 		
-		if(buttonText!=null && buttonText.contains("Calculate") ) {
-			if(aField.getText().isEmpty()) {
+		if(buttonText!=null && buttonText.contains("Calculate") ) 
+		{
+			
+			if(nField.getText().isEmpty()) 
+			{
+				
 				warningLabel.setVisible(true);
+				
 			}
-			else if(bField.getText().isEmpty()) {
-				warningLabel.setVisible(true);
-			}
-			else if(!aField.getText().isEmpty() && !bField.getText().isEmpty()) {
 				
 				//traverse input string
-		        for (int i = 0; i < aField.getText().length(); i++) {
+				int i;
+		        for ( i = 0; i < nField.getText().length(); i++ ) 
+		        {
 		        	
-		        	//check if each character is a not digit
-		            if (!Character.isDigit(aField.getText().charAt(i))) {
+		        	//Ensure each character is a not digit or a weird character
+		            if ( !Character.isDigit(nField.getText().charAt(i)) )
+		            {
+		            	
 		            	warningLabel.setVisible(true);
+		           
 		            }
 		        }
 				
-				//do stuff!
-		        convertMethods(aField.getText(),bField.getText());
+				//time to do stuff!
+		        //convertMethods(aField.getText(),bField.getText());
 			}
-		}
-		else if(buttonText!=null && buttonText.contains("Return to menu") ) {
+		
+		else if(buttonText!=null && buttonText.contains("Return to Menu") ) {
+			
 			// move the user back to the main view
-			try {
+			try 
+			{
+				
 				Parent root = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
 				Main.stage.setScene( new Scene(root, 600, 600) );
 				Main.stage.show();
-			}catch(Exception e) {
-				e.printStackTrace();
+			
 			}
+			
+			catch( Exception e ) 
+			{
+				
+				e.printStackTrace();
+			
+			}
+			
 		}
-		else if(buttonText!=null && buttonText.contains("Exit the program") ) {
+
+		else if( buttonText!=null && buttonText.contains( "Exit the Program" ) ) 
+		{
 			// exit the program
-			try {
+			
+			try 
+			{
+				
 				Stage stage = (Stage) exitButton.getScene().getWindow();
 				stage.close();
 										
-			}catch(Exception e) {
+			}
+			
+			catch( Exception e ) 
+			{
+				
 				e.printStackTrace();
+			
 			}
 		}
-	}
 	
-	private void convertMethods(String a, String b) {
 		
-		int aConvert = Integer.parseInt(a);
-		int bConvert = Integer.parseInt(b);
+		Binomial.conversion();
 		
-		Prime input = new Prime(aConvert, bConvert);
+		resultLabel.setText(nField.toString());
 		
-		//Prime.primeAMethod(aConvert);
-		//Prime.primeBMethod(bConvert);
+//		private void convertMethods(String a, String b) {
+//			
+//			int aConvert = Integer.parseInt(a);
+//			int bConvert = Integer.parseInt(b);
+//			
+//			Prime input = new Prime(aConvert, bConvert);
+//			
+//			//Prime.primeAMethod(aConvert);
+//			//Prime.primeBMethod(bConvert);
+//			
+//			//resultLabel.setText(Integer.toString(Prime.primeAMethod(aConvert)));
+//			
+//			resultLabel.setText(input.toString());
+//		}
 		
-		//resultLabel.setText(Integer.toString(Prime.primeAMethod(aConvert)));
-		
-		resultLabel.setText(input.toString());
 	}
-
 }
