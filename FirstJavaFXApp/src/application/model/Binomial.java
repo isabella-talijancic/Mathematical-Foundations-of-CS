@@ -1,6 +1,5 @@
 package application.model;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Binomial
@@ -8,27 +7,48 @@ public class Binomial
 	
 	private int n;
 	
-	public Binomial(int n) {
+	public Binomial(int n) 
+	
+	{
+		
 		this.n=n;
+	
 	}
 	
-	public void setN(int n) {
+	public void setN(int n) 
+	
+	{
+		
 		this.n = n;
+	
 	}
 	
-	public int getN() {
+	public int getN() 
+	
+	{
+		
 		return this.n;
 	}
 	
-	public static String doMath(int n) {
+	public static String doMath( int n ) 
+	
+	{
 		String retThis = "";
-		for(int a=0;a<=n;a++)
+		
+		for( int j=0; j <= n; j++ )
 		{
 			//checking to make sure that n is within specified range of 2 and 9. 
+			
 			if ( n > 1 && n < 10)
+				
 			{
-				retThis += ("("+((a==0||a==n)?"":coeff(n,a)+" ")+((a==n)?"":"X^"+(n-a)+" ")+((a==0)?"":"Y^"+a)+")"+((a!=n)?" +\n":""));
+				
+				retThis += ("("+( ( j == 0 || j == n ) ? "" : numbers ( n, j ) + 
+				" " ) + ( ( j == n ) ? "" : "x^" + ( n - j ) + " " ) + 
+				( ( j == 0 ) ? "" : "y^" + j ) + ")" + ( ( j != n ) ? " +\n" : "" ) );
+			
 			}
+			
 			else
 				retThis = "Please Try Again!";
 			
@@ -38,25 +58,40 @@ public class Binomial
 		//return ret;
 	}
 	
-	public static BigInteger coeff(int n,int a){
-	    BigInteger big = BigInteger.ONE;
-	    for (int i= 0;i<a;i++)
-	    big=big.multiply(BigInteger. valueOf(n-i)).divide(BigInteger. valueOf(i+1));
-	    return big;
+	public static int numbers( int n, int j )
+	
+	{
+		
+	    int largeInt = 1;
+	    
+	    for ( int i = 0; i < j; i++ )
+	    {
+	    	int lessThan = n - 1;
+	    	
+	    	int greaterThan = i + 1;
+	    	
+	    	largeInt = ( largeInt * ( lessThan ) ) / ( ( greaterThan ) );
+	    	
+	    }
+	    
+	    return largeInt;
+	
 	}
 	
-    public static int[] integers(int integer)
+    public static int[] integers( int integer )
+    
     {
     	int i;
     	
-        int[] number = new int[integer+1];
+        int[] number = new int[integer + 1];
         
         for( i = 0; i < number.length; i++ )
         {
         	
-            number[i] = calculation(integer,i);
+            number[i] = calculation( integer, i );
         
         }
+        
         return number;
     }
     

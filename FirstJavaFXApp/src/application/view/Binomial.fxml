@@ -54,15 +54,15 @@
             <Glow level="1.0" />
          </effect>
       </Label>
-      <Label fx:id="resultLabel" alignment="CENTER" layoutX="300.0" layoutY="160.0" prefHeight="162.0" prefWidth="216.0" text="result goes here!">
+      <Label fx:id="resultLabel" alignment="CENTER" layoutX="300.0" layoutY="160.0" prefHeight="162.0" prefWidth="216.0" text="result goes here!" wrapText="true">
          <font>
-            <Font name="Courier New" size="12.0" />
+            <Font name="Courier New" size="14.0" />
          </font>
          <effect>
             <Glow level="1.0" />
          </effect>
       </Label>
-      <Label fx:id="warningLabel" alignment="CENTER" layoutX="68.0" layoutY="550.0" prefHeight="28.0" prefWidth="461.0" text="Invalid inputs" textFill="RED" visible="false">
+      <Label fx:id="warningLabel" alignment="CENTER" layoutX="68.0" layoutY="550.0" prefHeight="28.0" prefWidth="461.0" text="Invalid input!" textFill="RED" visible="false">
          <font>
             <Font name="Courier New" size="12.0" />
          </font>
@@ -70,7 +70,7 @@
             <Glow />
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="33.0" layoutY="70.0" prefHeight="94.0" prefWidth="535.0" text="Please enter your power variable for the 'n'; remember that input for 'n' should be an integer of n(1&lt;n&lt;10): " textAlignment="CENTER" wrapText="true">
+      <Label alignment="CENTER" layoutX="33.0" layoutY="70.0" prefHeight="94.0" prefWidth="535.0" text="Please enter your power variable for the 'n'; remember that input for 'n' should be an integer of n ( 1 &lt; n &lt; 10 ): " textAlignment="CENTER" wrapText="true">
          <effect>
             <Glow level="1.0" />
          </effect>
