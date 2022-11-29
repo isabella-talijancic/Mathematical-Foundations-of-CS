@@ -65,13 +65,14 @@ public class Binomial
 	    int largeInt = 1;
 	    
 	    for ( int i = 0; i < j; i++ )
+	    	
 	    {
 	    	
-	    	int lessThan = n - 1;
+	    	int lessThan = n - i;
 	    	
 	    	int greaterThan = i + 1;
 	    	
-	    	largeInt = ( largeInt * ( lessThan ) ) / ( ( greaterThan ) );
+	    	largeInt = ( largeInt * ( lessThan ) /* + 1 */ ) / ( ( greaterThan ) );
 	    	
 	    }
 	    
