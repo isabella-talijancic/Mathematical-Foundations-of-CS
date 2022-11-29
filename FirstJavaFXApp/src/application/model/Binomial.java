@@ -35,7 +35,7 @@ public class Binomial
 	{
 		String retThis = "";
 		
-		for( int j=0; j <= n; j++ )
+		for( int j = 0; j <= n; j++ )
 		{
 			//checking to make sure that n is within specified range of 2 and 9. 
 			
@@ -43,9 +43,9 @@ public class Binomial
 				
 			{
 				
-				retThis += ("("+( ( j == 0 || j == n ) ? "" : numbers ( n, j ) + 
-				" " ) + ( ( j == n ) ? "" : "x^" + ( n - j ) + " " ) + 
-				( ( j == 0 ) ? "" : "y^" + j ) + ")" + ( ( j != n ) ? " +\n" : "" ) );
+				retThis += ("("+( ( j == 0 || j == n ) ? "" : numbers ( n, j ) ) 
+				+ ( ( j == n ) ? "" : "x^" + ( n - j ) ) + ( ( j == 0 ) ? "" : "y^" + j ) + ")" + 
+				( ( j != n ) ? " +\n" : "" ) );
 			
 			}
 			
@@ -66,6 +66,7 @@ public class Binomial
 	    
 	    for ( int i = 0; i < j; i++ )
 	    {
+	    	
 	    	int lessThan = n - 1;
 	    	
 	    	int greaterThan = i + 1;
@@ -118,7 +119,7 @@ public class Binomial
     {
     	int j;
 
-        String powerExponent = "(x+y)^" + ( integer2.length-1 ) + " = ";
+        String powerExponent = "(x+y)^" + ( integer2.length - 1 ) + " = ";
         
         int powerOfX = integer2.length - 1;
         
