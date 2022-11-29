@@ -21,8 +21,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
- * CombController is a Java class that will need to implement the EventHandler interface,
- * and handle any events that occur when the user interacts with Comb.fxml. 
+ * BinomialController is a Java class that will need to implement the EventHandler interface,
+ * and handle any events that occur when the user interacts with Binomial.fxml. 
  * 
  * @author Isabella Talijancic (juu530)
  * @author Amalia Talijancic (fwn783)
@@ -35,19 +35,15 @@ public class BinomialController implements EventHandler<ActionEvent> {
 	Button enterButton, backButton, exitButton;
 	
 	@FXML
-    ImageView bannerImageView;
-	
-	@FXML
-    Image bannerImage;
-	
-	@FXML
-	Label welcome, warningLabel, resultLabel;
+	Label welcome, nLabel, warningLabel, resultLabel, questionLabel;
 	
 	@FXML
 	TextField nField;
 	
 	@Override
 	public void handle(ActionEvent event) {
+		
+		warningLabel.setVisible(false);
 		
 		//check which button was pressed...
 		Button sourceButton = (Button) event.getSource();
@@ -76,11 +72,16 @@ public class BinomialController implements EventHandler<ActionEvent> {
 		            	warningLabel.setVisible(true);
 		           
 		            }
+		            else {
+		            	int nConvert = Integer.parseInt(nField.getText());
+		            	resultLabel.setText(Binomial.doMath(nConvert));
+		            }
+		            	
 		        }
 				
 				//time to do stuff!
 		        //convertMethods(aField.getText(),bField.getText());
-			}
+		}
 		
 		else if(buttonText!=null && buttonText.contains("Return to Menu") ) {
 			
@@ -122,26 +123,9 @@ public class BinomialController implements EventHandler<ActionEvent> {
 			
 			}
 		}
-	
 		
-		Binomial.conversion();
-		
-		resultLabel.setText(nField.toString());
-		
-//		private void convertMethods(String a, String b) {
-//			
-//			int aConvert = Integer.parseInt(a);
-//			int bConvert = Integer.parseInt(b);
-//			
-//			Prime input = new Prime(aConvert, bConvert);
-//			
-//			//Prime.primeAMethod(aConvert);
-//			//Prime.primeBMethod(bConvert);
-//			
-//			//resultLabel.setText(Integer.toString(Prime.primeAMethod(aConvert)));
-//			
-//			resultLabel.setText(input.toString());
-//		}
-		
+		//resultLabel.setText(nField.toString());
+			
 	}
+		
 }
