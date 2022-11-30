@@ -29,6 +29,13 @@
          <font>
             <Font name="Courier New" size="13.0" />
          </font></Button>
+      <Button fx:id="numConversion" layoutX="227.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Number Conversion">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Courier New" size="13.0" />
+         </font></Button>
       <Button fx:id="exitButton" layoutX="227.0" layoutY="341.0" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF;" text="Exit the program">
          <effect>
             <DropShadow />
