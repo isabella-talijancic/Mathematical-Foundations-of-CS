@@ -100,33 +100,39 @@ public class Prime {
 	    return lcm;
 	}
 	
-	public static int primeAMethod (int a) {
-		System.out.print("\nPrime Factors of " + a + ": ");
+	public static String primeAMethod (int a) {
+		String retThis = "";
+		//System.out.print("\nPrime Factors of " + a + ": ");
 		int i = 2;
         while (a > 1) {
             if (a % i == 0) {
-                System.out.print(i + " ");
+                //System.out.print(i + " ");
+                retThis += i + " ";
                 a /= i;
-                return i;
+                //return i;
             }
             else
                 i++;
         }
-        return i;
+        //return i;
+        return retThis;
 	}
 	
-	public static int primeBMethod (int b) {
-		System.out.print("\nPrime Factors of " + b + ": ");
+	public static String primeBMethod (int b) {
+		String retThis = "";
+		//System.out.print("\nPrime Factors of " + b + ": ");
 		int i = 2;
         while (b > 1) {
             if (b % i == 0) {
-                System.out.print(i + " ");
+                //System.out.print(i + " ");
+                retThis += i + " ";
                 b /= i;
             }
             else
                 i++;
         }
-        return i;
+        //return i;
+        return retThis;
 	}
 	
 	//toString() method
