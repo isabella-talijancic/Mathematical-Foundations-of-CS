@@ -73,6 +73,7 @@ public class MainController implements EventHandler<ActionEvent> {
 
 		else if(buttonText!=null && buttonText.contains("Number Conversion") ) {
 			try {
+				playSound("SahbaNumberConversion");
 				Parent root = FXMLLoader.load(getClass().getResource("../view/numConversion.fxml"));
 				Main.stage.setScene( new Scene(root, 600, 600) );
 				Main.stage.show();
