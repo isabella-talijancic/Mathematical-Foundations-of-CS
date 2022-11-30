@@ -72,10 +72,7 @@ public class MainController implements EventHandler<ActionEvent> {
 		}
 
 		else if(buttonText!=null && buttonText.contains("Number Conversion") ) {
-			//System.out.println("Treat");
-			// move the user to the treat view
 			try {
-				playSound("SahbaBinomial");
 				Parent root = FXMLLoader.load(getClass().getResource("../view/numConversion.fxml"));
 				Main.stage.setScene( new Scene(root, 600, 600) );
 				Main.stage.show();
